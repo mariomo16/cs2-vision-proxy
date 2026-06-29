@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
 	const params = new URLSearchParams();
 	if (country) params.append("country", country);
-	if (limit !== undefined) params.append("limit", limit);
+	params.append("limit", limit ?? "2");
 	const qs = params.toString();
 	if (qs) url += `?${qs}`;
 

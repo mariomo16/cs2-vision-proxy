@@ -1,12 +1,12 @@
 {
-	"name": "cs2-lens-proxy",
-	"version": "1.0.0",
-	"description": "Secure API proxy for the cs2-lens Chrome extension",
-	"scripts": {},
-	"author": "Mario Ortega",
-	"license": "MIT",
-	"packageManager": "pnpm@11.9.0",
-	"devDependencies": {
-		"@biomejs/biome": "2.5.2"
-	}
+  "name": "cs2-lens-proxy",
+  "version": "1.0.0",
+  "description": "Secure API proxy for the cs2-lens Chrome extension",
+  "scripts": {},
+  "author": "Mario Ortega",
+  "license": "MIT",
+  "packageManager": "pnpm@11.9.0",
+  "devDependencies": {
+    "@biomejs/biome": "2.5.2"
+  }
 }

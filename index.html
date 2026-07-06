@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CS2 Lens Proxy</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -33,58 +34,80 @@
       </header>
 
       <section class="routes">
-        <h2>API Endpoints</h2>
-
-        <div class="route">
-          <div class="route-head">
-            <span class="method">GET</span>
-            <span class="path">/api/faceit/player?<span class="query">nickname</span>=X</span>
-          </div>
-          <div class="desc">Lookup player by nickname</div>
+        <div class="tabs">
+          <button type="button" class="tab active" data-tab="faceit">FACEIT</button>
+          <button type="button" class="tab" data-tab="csrep">CS:REP</button>
         </div>
 
-        <div class="route">
-          <div class="route-head">
-            <span class="method">GET</span>
-            <span class="path">/api/faceit/player?<span class="query">game</span>=X&amp;<span class="query">game_player_id</span>=X</span>
+        <div class="tab-content active" data-tab="faceit">
+          <div class="route">
+            <div class="route-head">
+              <span class="method">GET</span>
+              <span class="path">/api/faceit/player?<span class="query">nickname</span>=X</span>
+            </div>
+            <div class="desc">Lookup player by nickname</div>
           </div>
-          <div class="desc">Lookup player by game + SteamID64</div>
+
+          <div class="route">
+            <div class="route-head">
+              <span class="method">GET</span>
+              <span class="path">/api/faceit/player?<span class="query">game</span>=X&amp;<span class="query">game_player_id</span>=X</span>
+            </div>
+            <div class="desc">Lookup player by game + SteamID64</div>
+          </div>
+
+          <div class="route">
+            <div class="route-head">
+              <span class="method">GET</span>
+              <span class="path">/api/faceit/players/<span class="param">{player_id}</span></span>
+            </div>
+            <div class="desc">Get player details by FACEIT ID</div>
+          </div>
+
+          <div class="route">
+            <div class="route-head">
+              <span class="method">GET</span>
+              <span class="path">/api/faceit/rankings/games/<span class="param">{game_id}</span>/regions/<span class="param">{region}</span></span>
+            </div>
+            <div class="desc">
+              Global ranking ·
+              <span class="query">?country=</span>
+              <span class="query">?offset=</span>
+              <span class="query">?limit=</span>
+            </div>
+          </div>
+
+          <div class="route">
+            <div class="route-head">
+              <span class="method">GET</span>
+              <span class="path">/api/faceit/rankings/games/<span class="param">{game_id}</span>/regions/<span class="param">{region}</span>/players/<span class="param">{player_id}</span></span>
+            </div>
+            <div class="desc">
+              Player position in ranking ·
+              <span class="query">?country=</span>
+              <span class="query">?limit=</span>
+            </div>
+          </div>
         </div>
 
-        <div class="route">
-          <div class="route-head">
-            <span class="method">GET</span>
-            <span class="path">/api/faceit/players/<span class="param">{player_id}</span></span>
+        <div class="tab-content" data-tab="csrep">
+          <div class="route">
+            <div class="route-head">
+              <span class="method">GET</span>
+              <span class="path">/api/csrep/players/<span class="param">{id}</span></span>
+            </div>
+            <div class="desc">Get player reputation data by CS:REP ID</div>
           </div>
-          <div class="desc">Get player details by FACEIT ID</div>
-        </div>
 
-        <div class="route">
-          <div class="route-head">
-            <span class="method">GET</span>
-            <span class="path">/api/faceit/rankings/games/<span class="param">{game_id}</span>/regions/<span class="param">{region}</span></span>
-          </div>
-          <div class="desc">
-            Global ranking ·
-            <span class="query">?country=</span>
-            <span class="query">?offset=</span>
-            <span class="query">?limit=</span>
-          </div>
-        </div>
-
-        <div class="route">
-          <div class="route-head">
-            <span class="method">GET</span>
-            <span class="path">/api/faceit/rankings/games/<span class="param">{game_id}</span>/regions/<span class="param">{region}</span>/players/<span class="param">{player_id}</span></span>
-          </div>
-          <div class="desc">
-            Player position in ranking ·
-            <span class="query">?country=</span>
-            <span class="query">?limit=</span>
+          <div class="route">
+            <div class="route-head">
+              <span class="method post">POST</span>
+              <span class="path">/api/csrep/players/<span class="param">{id}</span>/refresh</span>
+            </div>
+            <div class="desc">Refresh player reputation data</div>
           </div>
         </div>
       </section>
-
       <footer>
         <a href="https://github.com/mariomo16/cs2-lens-proxy" target="_blank" rel="noopener">GitHub</a>
         ·

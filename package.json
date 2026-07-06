@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Secure API proxy for the cs2-lens Chrome extension",
   "scripts": {
-    "dev": "vercel dev",
     "lint": "biome lint .",
     "format": "biome format --write .",
     "check": "biome check --write .",

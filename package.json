@@ -11,7 +11,7 @@
   },
   "author": "Mario Ortega",
   "license": "MIT",
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@11.10.0",
   "devDependencies": {
     "@biomejs/biome": "2.5.2"
   }

@@ -8,67 +8,90 @@
   </head>
   <body>
     <div class="container">
-      <h1>CS2 Lens Proxy</h1>
-      <div class="subtitle">
-        Secure API proxy for the cs2-lens Chrome extension
-      </div>
-
-      <div class="route">
-        <span class="method">GET</span>
-        <span class="path"
-          >/api/faceit/player?<span class="query">nickname</span>=X</span
-        >
-        <div class="desc">Lookup player by nickname</div>
-      </div>
-
-      <div class="route">
-        <span class="method">GET</span>
-        <span class="path"
-          >/api/faceit/player?<span class="query">game</span>=X&amp;<span
-            class="query"
-            >game_player_id</span
-          >=X</span
-        >
-        <div class="desc">Lookup player by game + SteamID64</div>
-      </div>
-
-      <div class="route">
-        <span class="method">GET</span>
-        <span class="path"
-          >/api/faceit/players/<span class="param">{player_id}</span></span
-        >
-        <div class="desc">Get player details by FACEIT ID</div>
-      </div>
-
-      <div class="route">
-        <span class="method">GET</span>
-        <span class="path"
-          >/api/faceit/rankings/games/<span class="param">{game_id}</span
-          >/regions/<span class="param">{region}</span></span
-        >
-        <div class="desc">
-          Global ranking · <span class="query">?country=</span>
-          <span class="query">?offset=</span> <span class="query">?limit=</span>
+      <header class="hero">
+        <h1>CS2 Lens Proxy</h1>
+        <p class="hero-desc">
+          Universal serverless API proxy for the
+          <a href="https://chromewebstore.google.com/detail/cs2-lens/clploogmlpocoolonhlogblopobiccgb" class="ext-link" target="_blank" rel="noopener">CS2 Lens</a> Chrome extension.
+        </p>
+        <p class="hero-desc">Forwards API requests while keeping your keys server-side.</p>
+        <div class="badges">
+          <a href="https://github.com/mariomo16/cs2-lens-proxy" class="badge" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <title>GitHub</title>
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <span class="badge badge-outline">MIT License</span>
+          <a href="https://github.com/mariomo16/cs2-lens" class="badge" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <title>GitHub</title>
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            CS2 Lens Source
+          </a>
         </div>
-      </div>
+      </header>
 
-      <div class="route">
-        <span class="method">GET</span>
-        <span class="path"
-          >/api/faceit/rankings/games/<span class="param">{game_id}</span
-          >/regions/<span class="param">{region}</span>/players/<span
-            class="param"
-            >{player_id}</span
-          ></span
-        >
-        <div class="desc">
-          Player position in ranking · <span class="query">?country=</span>
-          <span class="query">?limit=</span>
+      <section class="routes">
+        <h2>API Endpoints</h2>
+
+        <div class="route">
+          <div class="route-head">
+            <span class="method">GET</span>
+            <span class="path">/api/faceit/player?<span class="query">nickname</span>=X</span>
+          </div>
+          <div class="desc">Lookup player by nickname</div>
         </div>
-      </div>
+
+        <div class="route">
+          <div class="route-head">
+            <span class="method">GET</span>
+            <span class="path">/api/faceit/player?<span class="query">game</span>=X&amp;<span class="query">game_player_id</span>=X</span>
+          </div>
+          <div class="desc">Lookup player by game + SteamID64</div>
+        </div>
+
+        <div class="route">
+          <div class="route-head">
+            <span class="method">GET</span>
+            <span class="path">/api/faceit/players/<span class="param">{player_id}</span></span>
+          </div>
+          <div class="desc">Get player details by FACEIT ID</div>
+        </div>
+
+        <div class="route">
+          <div class="route-head">
+            <span class="method">GET</span>
+            <span class="path">/api/faceit/rankings/games/<span class="param">{game_id}</span>/regions/<span class="param">{region}</span></span>
+          </div>
+          <div class="desc">
+            Global ranking ·
+            <span class="query">?country=</span>
+            <span class="query">?offset=</span>
+            <span class="query">?limit=</span>
+          </div>
+        </div>
+
+        <div class="route">
+          <div class="route-head">
+            <span class="method">GET</span>
+            <span class="path">/api/faceit/rankings/games/<span class="param">{game_id}</span>/regions/<span class="param">{region}</span>/players/<span class="param">{player_id}</span></span>
+          </div>
+          <div class="desc">
+            Player position in ranking ·
+            <span class="query">?country=</span>
+            <span class="query">?limit=</span>
+          </div>
+        </div>
+      </section>
 
       <footer>
-        <a href="https://github.com/mariomo16">github.com/mariomo16</a>
+        <a href="https://github.com/mariomo16/cs2-lens-proxy" target="_blank" rel="noopener">GitHub</a>
+        ·
+        <a href="https://github.com/mariomo16/cs2-lens-proxy/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+        ·
+        Built by
+        <a href="https://github.com/mariomo16" target="_blank" rel="noopener">Mario Ortega</a>
       </footer>
     </div>
   </body>

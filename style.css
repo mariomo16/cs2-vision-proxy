@@ -190,9 +190,6 @@ h1 {
   transition: all 0.25s ease;
 }
 
-.route:hover {
-}
-
 .route-head {
   display: flex;
   align-items: baseline;

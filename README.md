@@ -1,6 +1,6 @@
-# CS2 Lens Proxy
+# CS2 Vision Proxy
 
-Universal serverless API proxy for the [CS2 Lens](https://chromewebstore.google.com/detail/cs2-lens/clploogmlpocoolonhlogblopobiccgb) Chrome extension.
+Universal serverless API proxy for the [CS2 Vision](https://chromewebstore.google.com/detail/cs2-lens/clploogmlpocoolonhlogblopobiccgb) Chrome extension.
 
 ## Local development
 

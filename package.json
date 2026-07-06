@@ -1,7 +1,7 @@
 {
-  "name": "cs2-lens-proxy",
+  "name": "cs2-vision-proxy",
   "version": "1.0.0",
-  "description": "Secure API proxy for the cs2-lens Chrome extension",
+  "description": "Secure API proxy for the cs2-vision Chrome extension",
   "scripts": {
     "lint": "biome lint .",
     "format": "biome format --write .",

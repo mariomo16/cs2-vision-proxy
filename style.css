@@ -121,6 +121,7 @@ h1 {
 
 .badge .icon {
   opacity: 0.7;
+  user-select: none;
 }
 
 .badge img.icon {
@@ -185,6 +186,7 @@ h1 {
 .tab-icon {
   height: 1.1rem;
   display: block;
+  user-select: none;
 }
 
 .tab-icon[alt="CSREP"] {
